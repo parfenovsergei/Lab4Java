@@ -188,7 +188,21 @@ public class GraphicsDisplay extends JPanel{
 
     protected boolean isFuncNumbersEven(Double[] point) {
         //условие варианта
+        double value = point[1];
+        int znachenieFunc = (int) value;
+        int rest;
+        boolean isTrue = false;
+        while(znachenieFunc != 0)
+        {
+            rest = znachenieFunc % 10;
+            znachenieFunc /= 10;
+            if(rest % 2 == 0)
+                isTrue = true;
+            else
+                isTrue = false;
+        }
 
+        return isTrue;
     }
 
     // Отображение маркеров точек, по которым рисовался график
